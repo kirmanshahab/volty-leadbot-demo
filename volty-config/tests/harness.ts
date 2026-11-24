@@ -14,7 +14,7 @@ const calls: unknown[] = []
 const ctx = {
   sleep: async () => {},
   volty: {
-    messaging: { listMessages: async ({ limit }: { limit: number }) => ({ messages: msgs.slice(-limit).reverse() }) }, // shuffled order on purpose
+    messaging: { note: async (a: { text: string }) => { calls.push(['note', a.text]); return {} }, listMessages: async ({ limit }: { limit: number }) => ({ messages: msgs.slice(-limit).reverse() }) }, // shuffled order on purpose
     privacy: { expand: async (a: { text: string }) => ({ text: a.text.startsWith('pii:') ? 'visitor@example.com' : a.text, unknown: [] }) },
     conversations: { get: async () => ({ contactId: 'cnt:test' }), setPriority: async (a: unknown) => { calls.push(['setPriority', a]); return {} } },
     contacts: { update: async (a: unknown) => { calls.push(['contacts.update', a]); return {} } },

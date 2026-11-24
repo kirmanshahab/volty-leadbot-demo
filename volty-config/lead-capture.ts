@@ -154,7 +154,17 @@ export default defineAutomation({
         } catch {
           // priority is a nicety
         }
-        const who = name && name !== '-' ? name : 'a website visitor'
+        // A routine cannot assign a team (only a person), so leave a note for staff. It must not start with
+      // "HOT LEAD": that exact opening is what the separate hot-lead alert listens for.
+      try {
+        await ctx.volty.messaging.note({
+          conversationId,
+          text: `Routing: hot lead from the quick path, for the Sales team. ${company ? `${company}. ` : ''}Volume ${volume ?? 'not given'}, start ${timeline ?? 'not given'}. Please assign it to Sales.`,
+        })
+      } catch {
+        // the alert below still goes out
+      }
+      const who = name && name !== '-' ? name : 'a website visitor'
         const summary = [
           `Hot lead: ${who}${company ? `, ${company}` : ''}`,
           `Industry: ${attributes.industry ?? 'not given'}`,
