@@ -6,7 +6,7 @@ cold. Hot leads alert the owner, existing customers go to Support, and a human r
 
 - **Live site:** _pending first deploy_ (a static Vite site, see "Run and deploy")
 - **Hosted chat page:** https://volty.voltade.com/chat/p35e7kc6o3tg8znsve4dc
-- **Repo:** https://github.com/kirmandev/volty-leadbot-demo
+- **Repo:** https://github.com/kirmanshahab/volty-leadbot-demo
 
 The site in `src/` is a single page that embeds the real widget. Everything that makes the bot work lives in
 [`volty-config/`](volty-config/).

@@ -345,7 +345,7 @@ export default function App() {
           <p>
             <span className="font-medium text-ink">Kirman Shahab</span> ·{' '}
             <a className="underline-offset-4 hover:text-ink hover:underline" href={GITHUB_URL} target="_blank" rel="noreferrer">
-              GitHub (kirmandev)
+              GitHub (kirmanshahab)
             </a>
             {LINKEDIN_URL ? (
               <>
