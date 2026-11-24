@@ -4,12 +4,12 @@ export default defineChatFlow({
   start: 'welcome',
   steps: {
     welcome: message({
-      say: "Hi! I'm Volty's assistant 👋 Looking to automate customer conversations? I can show you how Volty fits your business in under 2 minutes.\n\nYou're chatting with Volty's AI assistant, here to answer questions about Volty. A person can step in at any time.",
+      say: "Hi, I'm Volty's assistant 👋 See how Volty fits your business in 2 minutes.\n\nYou're chatting with Volty's AI assistant, here to answer questions about Volty. A person can step in at any time.",
       buttons: [
-        button('See how Volty works', 'how'),
-        button('Pricing', 'pricing'),
-        button('Is Volty right for my business?', 'q_industry'),
+        button('Find my Volty fit (2 min)', 'q_industry'),
         button('Calculate my time savings', 'c_vol'),
+        button('Pricing', 'pricing'),
+        button('See how Volty works', 'how'),
         button('Compare Volty vs a competitor', 'cmp'),
         button('Talk to a human', 'human'),
       ],
