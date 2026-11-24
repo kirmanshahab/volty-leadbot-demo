@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>An AI lead-qualifier for Volty — built by Kirman</title>
+    <meta
+      name="description"
+      content="A website lead-qualifier built on Volty with Claude Code and the volty CLI: it qualifies, scores and routes leads in under 2 minutes."
+    />
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#141417" media="(prefers-color-scheme: dark)" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%236366f1'/%3E%3Cpath d='M18 5 9 18h6l-1 9 9-13h-6z' fill='white'/%3E%3C/svg%3E" />
+    <script>
+      // Apply the saved theme before first paint so there is no light/dark flash.
+      try {
+        var t = new URLSearchParams(location.search).get('theme') || localStorage.getItem('theme')
+        if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t
+      } catch (e) {}
+    </script>
+    <script>
+      // The Volty widget draws its launcher inside a closed shadow root and has no public "open" call.
+      // To let the page buttons open the chat, keep a handle on that root. It must run before the widget
+      // script. If the widget changes how it renders, openWidget() falls back to the hosted chat page.
+      ;(function () {
+        var original = Element.prototype.attachShadow
+        Element.prototype.attachShadow = function (init) {
+          var root = original.call(this, init)
+          if (this.hasAttribute && this.hasAttribute('data-volty-widget')) window.__voltyShadow = root
+          return root
+        }
+      })()
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+    <script async src="https://volty.voltade.com/widget/v1.js" data-widget-id="p35e7kc6o3tg8znsve4dc"></script>
+  </body>
+</html>

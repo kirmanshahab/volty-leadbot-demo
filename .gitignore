@@ -1,0 +1,10 @@
+node_modules
+dist
+.vercel
+.env
+.env.*
+*.local
+.DS_Store
+.lead-capture.harness.ts
+tsconfig.tsbuildinfo
+WEBSITE_BRIEF.md
