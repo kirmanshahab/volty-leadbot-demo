@@ -4,7 +4,7 @@ A website lead-qualifier built on [Volty](https://voltade.com) with Claude Code 
 taps through a short quick path (or just types), gets a personalised fit summary, and is scored hot, warm or
 cold. Hot leads alert the owner, existing customers go to Support, and a human request is honoured at any point.
 
-- **Live site:** _pending first deploy_ (a static Vite site, see "Run and deploy")
+- **Live site:** https://volty-leadbot-demo.vercel.app/ (a static Vite site, see "Run and deploy")
 - **Hosted chat page:** https://volty.voltade.com/chat/p35e7kc6o3tg8znsve4dc
 - **Repo:** https://github.com/kirmanshahab/volty-leadbot-demo
 
